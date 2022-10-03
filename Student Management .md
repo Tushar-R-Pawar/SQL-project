@@ -1,5 +1,7 @@
 Create Database Student_Management;
+
 use student_Management;
+
 Create a table having student’s personal details.
 Create Table Student_Details(
 Student_id int not null,
@@ -8,6 +10,7 @@ Last_name varchar(255) not null,
 Birth_Date varchar(255) not null,
 Address varchar(255) default'Thane',
 primary key(Student_id));
+
 insert into Student_Details values(1,'Kabir', 'Singh', '2000-05-02', 'Nahur'),
 (2,'Ishan','Kishan', '2001-11-22', 'Dombivali'),
 (3,'Acharya', 'Agarwal', '2000-04-01', 'virar'),
@@ -68,6 +71,7 @@ English_score int,
 Arts_score int,
 PE_score int,
 primary key(Student_id));
+
 Insert into academics_performance
 Values (1,90,80,70,60,50),
 (2,85,52,98,56,58),

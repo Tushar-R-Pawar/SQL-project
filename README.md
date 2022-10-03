@@ -121,60 +121,80 @@ Values (1,90,80,70,60,50),
 (50,80,95,86,45,75);
 
 select * from academics_performance;
+
 1.select the count of students by using count operator.
 Select count(students_id) from academics_performance;
+
 2.select the max of students score by using max operator.
 Select max(Maths_score), max(Marathi_score), max(English_score), max(Arts_Score),
 max(PE_Score) from academics_performance;
+
 3.select the min of students score by using min operator.
 Select min(Maths_score), min(Marathi_score), min(English_score), min(Arts_Score),
 min(PE_Score) from academics_performance;
+
 4.select the avg of students score by using avg operator.
 Select avg(Maths_score), avg(Marathi_score), avg(English_score), avg(Arts_Score),
 avg(PE_Score) from academics_performance;
+
 5.select the sum of students score by using sum operator.
 Select sum(Maths_score), sum(Marathi_score), sum(English_score), sum(Arts_Score),
 sum(PE_Score) from academics_performance;
+
 6. select the first name and last name in one string using concat operator.
 select Student_id, First_name, Last_name, concat(First_name," _ ", Last_name) as
 Combination, length(concat(first_name," _ " ,last_name)) as l_name from Student_Details;
+
 7.Capatalize first letter from first name.
 Select concat(UPPER(LEFT(first_name, 1)), lower(SUBSTRING(first_name, 2)))
 from student_details;
+
 8. Select first name from student where last name is verma.
 select first_name from student_details where last_name = "verma";
+
 9. Use Inner Join Function.
 select student_details.first_name, student_details.last_name,
 academics_performance.marathi_score, academics_performance.maths_score
 from academics_performance
 inner join student_details
 on student_details.student_id = academics_performance.student_id;
+
 10.Use Left Join Function.
 select student_details.first_name, student_details.last_name,
 academics_performance.arts_score, academics_performance.pe_score
 from academics_performance
 left join student_details
 on student_details.student_id = academics_performance.student_id;
+
 11.Create View maths_score, arts_score, english_score where student id is 31
 create view tushar as
 select maths_score, arts_score, english_score
 from academics_performance where student_id=31;
+
 12.Select first 20 rows of first_name , last_name from student details.
 select first_name, last_name from student_details limit 20;
+
 13. Sort First Name, Last Name by Ascending Order
 select first_name, last_name from student_details order by last_name;
+
 14.Sort First Name, Last Name by Descending Order
 select first_name, last_name from student_details order by last_name desc;
+
 15. find out length of first name and last name.
 select first_name, length(first_name), last_name, length(last_name) from student_details;
+
 16. find out first name of student starting with ‘a’ using like function
 select first_name, last_name from student_details where first_name like "a%";
+
 17. find out first name of student ending with ‘a’ using like function
 select first_name, last_name from student_details where first_name like "%a";
+
 18. select first name and student id where student id is more than 20
 select first_name, student_id from student_details where (select student_id > 20);
+
 19. select all details from student details where first name is tushar, abbas, kyra using IN
 function
 select * from student_details where first_name in ('tushar','abbas','kyra');
+
 20. use distinct function on address column
 select distinct address from student_details;
